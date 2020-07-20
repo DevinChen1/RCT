@@ -32,8 +32,6 @@ namespace RCT
         public void process(EventData eventData)
         {
             _handlers.Where(x => x.HanderType == eventData.Type).ToList().ForEach(handler => handler.Execute(eventData));
-
-           
         }
 
     }
@@ -49,6 +47,7 @@ namespace RCT
     public class EventData
     {
         public EventType Type { get; set; }
+        public string dataJson { get; set; }
     }
     public  enum EventType
     {
